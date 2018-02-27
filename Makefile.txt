@@ -1,0 +1,11 @@
+lab0:cpp1.o cpp2.o
+	 g++ -o lab0 cpp1.o cpp2.o
+
+cpp2.o:cpp2.cpp
+	g++ -c cpp2.cpp
+
+cpp1.o:cpp1.cpp
+	g++ -c cpp1.cpp
+
+clean:
+	rm*.o lab0
