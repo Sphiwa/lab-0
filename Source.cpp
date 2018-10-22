@@ -1,39 +1,28 @@
-#include <iostream> 
-#include <conio.h>
-
+#include<iostream> 
+#include<fstream> 
+#include<math.h> 
+#include<Windows.h> 
 using namespace std;
-
 int main()
 {
-
-	const int n = 3;
-	cout << "Enter the elements of the array" << endl;
-	int a[n][n];
-	int b[n][n + 1];
-	for (int i = 0; i < n; i++)
+	SetConsoleOutputCP(1251);
+	SetConsoleCP(1251);
+	double e;
+	cout << "Enter E: ";
+	cin >> e;
+	double tmp;
+	ofstream fout;
+	fout.open("file.txt");
+	double i = 1;
+	while (true)
 	{
-		
-		for (int j = 0; j < n; j++)
-		{
-			cin >> a[i][j];
-			
-		}
-		
+		tmp = (i - 0.1) / (pow(i, 3) + abs(tan(i * 2)));
+		fout << tmp << endl;
+		if (abs(tmp) < e)
+			break;
+		i++;
 	}
-	cout << "the elements are " << endl;
-	for (int i = 0; i < n; i++)
-	{
-
-		for (int j = 0; j < n; j++)
-		{
-			
-			cout << a[i][j] << "  ";
-		}
-		cout << endl;
-	}
-
-	system("pause");
+	fout.close();
+	system("PAUSE");
 	return 0;
-	
-	//_getch();
 }
